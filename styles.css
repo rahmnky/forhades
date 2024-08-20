@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap');
+
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #ff6f61, #ff4081);
+    animation: background-animate 15s ease-in-out infinite;
+    font-family: 'Amiri', serif;
+}
+
+@keyframes background-animate {
+    0% {
+        background: linear-gradient(135deg, #ff6f61, #ff4081);
+    }
+    50% {
+        background: linear-gradient(135deg, #ff4e50, #ff80ab);
+    }
+    100% {
+        background: linear-gradient(135deg, #ff6f61, #ff4081);
+    }
+}
+
+.centered-name {
+    font-size: 200px;
+    color: #fff;
+    text-align: center;
+    text-shadow: 0 0 20px #ff80ab, 0 0 40px #ff4081, 0 0 60px #ff4081;
+    animation: glow 3s infinite alternate, pulse 2s infinite;
+}
+
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 20px #ff80ab, 0 0 40px #ff4081, 0 0 60px #ff4081;
+    }
+    100% {
+        text-shadow: 0 0 30px #ff80ab, 0 0 60px #ff4081, 0 0 90px #ff4081;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+button {
+    margin-top: 20px;
+    padding: 15px 30px;
+    font-size: 20px;
+    border: none;
+    border-radius: 30px;
+    background-color: #ff4081;
+    color: #fff;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    text-shadow: 0 0 3px #fff;
+}
+
+button:hover {
+    background-color: #ff80ab;
+    transform: scale(1.1);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+}
+
+#hearts-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.heart {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-image: url('heart.png');
+    background-size: cover;
+    animation: float 6s infinite ease-in-out, rotate 6s infinite linear;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(100vh) scale(0.5);
+    }
+    100% {
+        transform: translateY(-100vh) scale(1);
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+#quotes-container {
+    margin-top: 30px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.quote-box {
+    background-color: #ffebf0; /* Light pink background */
+    border: 2px solid #ff4081; /* Pink neon border */
+    border-radius: 15px;
+    padding: 20px;
+    margin: 10px 0;
+    max-width: 90%;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    font-size: 28px;
+    color: #ff4081;
+    line-height: 1.8;
+    animation: fade-in 0.7s ease-in;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.quote-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+}
